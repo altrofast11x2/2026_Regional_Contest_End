@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+</head>
+<style>
+  body{display: grid;place-content: center;height: 100vh;}
+  .container{display: flex;}
+  .ItemZone{width: 600px;height: 400px;border: 1px solid #333;}
+  .ItemDrag {display: grid;grid-template-columns: 2fr 2fr 2fr;}
+  .ItemDrag li{width: 200px; cursor: grab;}
+  .DragZone{display: grid;grid-template-columns: 2fr 2fr 2fr; margin-left: 50px;width: 600px;height: 400px;border: 1px solid #333;text-align: center;}
+  .DragZone p{width: 300%;text-align: center; line-height: 400px;}
+  button{margin: 0 20px;padding: 0 25px; border: 1px solid #333;}
+</style>
+<body>
+  <div class="container">
+    <div class="ItemZone">
+      <ul class="ItemDrag">
+        <li><img src="./test-images/test1.gif"></li>
+        <li><img src="./test-images/test1.jpg"></li>
+        <li><img src="./test-images/test1.png"></li>
+        <li><img src="./test-images/test2.gif"></li>
+        <li><img src="./test-images/test2.jpg"></li>
+        <li><img src="./test-images/test2.png"></li>
+      </ul>
+    </div>
+    <div class="DragZone">
+      <p>이미지를 여기에 드래그하세요</p>
+    </div>
+    <button onclick="location.reload()">초기화</button>
+  </div>
+</body>
+<script src="../lib.js"></script>
+<script>
+  const ItemDrag = $$('.ItemDrag li')
+  const DragZone = $('.DragZone')
+  ItemDrag.forEach(e => {
+    e.ondragstart = el =>
+      el.dataTransfer.setData("html", e.innerHTML)
+  });
+  DragZone.ondragover = e => e.preventDefault()
+
+  DragZone.ondrop = e => {
+    $('p')?.remove()
+    DragZone.innerHTML += e.dataTransfer.getData("html")
+  }
+</script>
+
+</html>

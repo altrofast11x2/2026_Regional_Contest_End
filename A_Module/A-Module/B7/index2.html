@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" inputmode="numeric" maxlength="1">
+  <input type="text" inputmode="numeric" maxlength="1">
+  <input type="text" inputmode="numeric" maxlength="1">
+  <input type="text" inputmode="numeric" maxlength="1">
+  <input type="text" inputmode="numeric" maxlength="1">
+  <input type="text" inputmode="numeric" maxlength="1">
+  <button style="display: none;" id="btn" onclick="location.reload()">제출하기</button>
+</body>
+<script src="../lib.js"></script>
+<script>
+  const inputs = $$("input")
+  inputs.forEach((input, i) => {
+    input.addEventListener('keydown', e => {
+      if (e.key === "Backspace" && input.value === "" && i > 0) {
+        inputs[i - 1].focus()
+      }
+    })
+    input.addEventListener('input', e => {
+      input.value = input.value.replace(/[^0-9]/g, "")
+      if (input.value.length === 1 && i < inputs.length - 1) {
+        inputs[i + 1].focus()
+      }
+      const filled = [...inputs].every(e => e.value.length === 1)
+      btn.style.display = filled ? "block" : "none";
+    })
+  });
+</script>
+
+</html>

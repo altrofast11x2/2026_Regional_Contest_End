@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .wrap>div{padding: 5px 10px;border: 1px solid #000;}
+</style>
+<body style="height: 100vh;margin: 0;display: grid;place-content: center;">
+  <video src="./test-video.mp4" style="margin: 30px auto; width: 400px;height: 400px;"></video>
+  <div class="wrap" style="display: flex;gap: 5px;">
+    <div id="play">재생</div>
+    <div id="stop">일시정지</div>
+    <div id="tenPlus">10초 빨리감기</div>
+    <div id="tenMin"> 10초 되감기</div>
+    <div id="sound">소리 음소거</div>
+  </div>
+  <script src="../lib.js"></script>
+  <script>
+    const $video = $('video')
+
+    $('#play').onclick = () => $video.play()
+    $('#stop').onclick = () => $video.pause()
+    $('#tenPlus').onclick = () => $video.currentTime += 10
+    $('#tenMin').onclick = () => $video.currentTime -= 10
+    $('#sound').onclick = () => $video.muted = !$video.muted
+  </script>
+</body>
+
+</html>

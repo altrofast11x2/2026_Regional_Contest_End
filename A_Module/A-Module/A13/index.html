@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{margin: 0;display: grid;place-content: center;height: 100vh;}
+  .btn {padding: 10px 20px;border: 1px solid #000; position: relative;}
+  #popup{display: none;}
+  .wrap{width: 600px;height: 550px;background-color: #eee;display: flex;align-items: center;justify-content: center;flex-direction: column;}
+  #pop:checked ~ #popup{position: absolute;width: 100vw;height: 100vh; display: flex;justify-content: center;align-items: center;background-color: #00000070;}
+</style>
+
+<body>
+  <input type="checkbox" id="pop" hidden>
+  <label for="pop" class="btn">로그인</label>
+  <div class="d" id="popup">
+    <div class="wrap">
+      <h2>계정 로그인</h2>
+      <p style="text-align: center;">
+        안전한 서비스를 위해 로그인이 필요합니다. <br>
+
+        계속하려면 아래에 등록된 이메일과 비밀번호를 입력해주세요. <br>
+
+        로그인 계속
+      </p>
+      <label for="pop" class="btn">[ X ]</label>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{margin: 0;padding: 0;box-sizing: border-box;list-style: none;}
+body{display: flex;align-items: center;justify-content: center;height: 100vh;}
+ul{display: flex;flex-wrap: wrap; gap: 35px; display: grid;grid-template-columns: repeat(4,1fr);}
+li{text-align: center;}
+li img{width: 150px;height: 150px; }
+@media (min-width:768px) and (max-width:1023px){ul{display: grid;grid-template-columns: repeat(2,1fr);}}
+@media (max-width:767px){ul{display: grid;grid-template-columns: repeat(1,1fr);}}
+</style>
+<body>
+    <ul>
+      <li><img src="./card1.jpg" alt="이미지 샘플카드"><button>더보기</button></li>
+      <li><img src="./card2.jpg" alt="이미지 샘플카드"><button>더보기</button></li>
+      <li><img src="./card3.jpg" alt="이미지 샘플카드"><button>더보기</button></li>
+      <li><img src="./card4.jpg" alt="이미지 샘플카드"><button>더보기</button></li>
+    </ul>
+</body>
+
+</html>

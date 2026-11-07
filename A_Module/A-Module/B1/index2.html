@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <label for="">비밀번호 </label>
+  <input type="password" name="" id="">
+</body>
+<script>
+  const i = document.querySelector('input')
+  const g = e => {
+    const l = e.length,
+      u = /[A-Z]/.test(e),
+      n = /[0-9]/.test(e),
+      s = /[!@#$%^&*]/.test(e)
+    i.style.borderColor =
+      !l ? "black" :
+        l >= 8 && u && n && s ? "green" :
+          l >= 6 && (u || n) ? "orange" : "red"
+  }
+  i.addEventListener("input", ({ target }) => {
+    g(target.value)
+  })
+</script>
+
+</html>

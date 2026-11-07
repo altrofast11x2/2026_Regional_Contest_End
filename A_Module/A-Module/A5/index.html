@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+</head>
+<style>
+section{width: 100%;height: 100vh;display: flex;justify-content: center;align-items: center;flex-direction: column;color: #333;background-color: rgb(234, 234, 234);}
+.title{font-size: 2.1em;margin-bottom: 20px;}
+article{width: 800px;height: 500px;box-shadow: 0px 0px 4px 0.3px #33333370; border-radius: 12px;background-color: #fff;}
+.wrap{font-weight: bold;}
+.tr_title{font-size: 1.1em;}
+.t_tr a{width: 100%;height: 100px;display: flex; align-items: center; justify-content: space-between;padding: 0 25px;}
+.t_tr:not(:last-child){border-bottom: 1px solid #ccc;}
+.date{color: #a3a3a3;}
+.type{margin: 0 10px; padding: 10px 30px;background-color: rgb(71, 71, 255); border-radius: 25px;color: #fff;}
+.import{background-color: red;}
+</style>
+
+<body>
+  <section>
+    <h2 class="title">공지사항</h2>
+    <article>
+      <div class="t_tr"><a href="#"><div class="wrap"><span class="type import">중요</span><span class="tr_title">2026년 WorldSkills 대회 일정 안내</span></div><span class="date">2026-01-15</span></a></div>
+      <div class="t_tr"><a href="#"><div class="wrap"><span class="type">공지</span><span class="tr_title">웹디자인 기술대회 참가신청 마감</span></div><span class="date">2026-01-10</span></a></div>
+      <div class="t_tr"><a href="#"><div class="wrap"><span class="type">안내</span><span class="tr_title">온라인 교육과정 개설 안내</span></div><span class="date">2026-01-08</span></a></div>
+      <div class="t_tr"><a href="#"><div class="wrap"><span class="type">공지</span><span class="tr_title">2026년 1분기 교육일정 발표</span></div><span class="date">2026-01-05</span></a></div>
+      <div class="t_tr"><a href="#"><div class="wrap"><span class="type">안내</span><span class="tr_title">홈페이지 점검 일정 안내</span></div><span class="date">2026-01-03</span></a></div>
+    </article>
+  </section>
+</body>
+
+</html>

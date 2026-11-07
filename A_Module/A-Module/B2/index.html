@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>To-do 리스트</h2>
+    <div class="wrap"><input type="text" placeholder="할 일을 입력해주세요"><button>추가</button></div>
+    <ul class="list"></ul>
+  </div>
+</body>
+<script src="../lib.js"></script>
+<script>
+  const list = $('.list')
+  const input = $('input')
+  const btn = $('.wrap > button')
+
+  btn.onclick = () => {
+    const li = Object.assign(document.createElement('li'), {
+      innerHTML: `<p>${input.value}</p><button class="del" onclick="parentElement.remove()">삭제</button>`
+    })
+    list.appendChild(li)
+    input.value = ""
+  }
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .grn {
+    background-color: greenyellow;
+  }
+
+  .pink {
+    background-color: pink;
+  }
+</style>
+
+<body>
+  <div class="logs"></div>
+  <button onclick="Notice('grn')">성공</button>
+  <button onclick="Notice('pink')">실패</button>
+</body>
+<script src="../lib.js"></script>
+<script>
+  const logs = $('.logs')
+  function Notice(value) {
+    const newDiv = newEl('div', {
+      textContent: value === "grn" ? "성공하였습니다" : "실패하였습니다",
+      classList: value
+    })
+    logs.appendChild(newDiv)
+    newDiv.addEventListener('click', () => {
+      newDiv.remove()
+    })
+    setInterval(() => {
+      newDiv.remove()
+    }, 5000)
+  }
+</script>
+
+</html>

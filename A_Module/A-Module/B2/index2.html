@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrap"><input type="text"><button>추가</button></div>
+    <ul class="list"></ul>
+  </div>
+  <script src="../lib.js"></script>
+  <script>
+    const l = $('.list')
+    const i = $('input')
+    const b = $('.wrap > button')
+    b.onclick = () => {
+      const li = Object.assign(document.createElement('li'), {
+        innerHTML: `<p>${i.value}</p><button onclick='parentElement.remove()'>삭제</button>`
+      })
+      l.appendChild(li)
+      i.value = ""
+    }
+  </script>
+</body>
+
+</html>
